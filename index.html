@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Sudarshan&#39;s Tech Stuff</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://thesuda.github.io/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Sudarshan&#39;s Tech Stuff" href="https://thesuda.github.io/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Sudarshan&#39;s Tech Stuff">
+  <meta property="og:site_name" content="Sudarshan&#39;s Tech Stuff">
+  <meta property="og:url" content="https://thesuda.github.io/">
+  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="theSuda">
+  <meta name="twitter:title" content="Sudarshan&#39;s Tech Stuff">
+  <meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+  
+    <meta name="twitter:creator" content="theSuda">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Sudarshan&#39;s Tech Stuff</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+      
+        
+        <a class="page-link" href="/archives/">Archives</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+
+  
+
+  
+
+  <ul class="post-list">
+    
+      
+      
+
+      <li>
+        <header class="post-header">
+          <h1 class="post-title">
+            
+              <a class="post-link" href="/2020/04/24/raspipost/">Every developer should have a Raspberry PI</a>
+            
+          </h1>
+
+          <p class="post-meta">
+            Apr 24, 2020
+            
+               •
+  
+    
+    
+      
+        <a href="/categories/markdown/">markdown</a>
+      
+    
+  
+
+
+
+
+            
+            
+          </p>
+        </header>
+
+        <div class="post-content">
+          <h2>Raspberry… what?</h2>
+
+<p>If you don’t know what a <a href="https://www.raspberrypi.org/">Raspberry Pi</a> is, you should check it out. It’s a single board computer barely bigger than a credit card in size. It can run many operating systems like Raspbian, Ubuntu and Windows 10 IoT core. To use this tiny computer, all you need is a micro SD card and a power supply. For most use cases you will never have to connect a keyboard or mouse to the pi. You can just set it up and access remotely from your personal computer. Raspberry Pis are a favorite tool of most DIY enthusiasts. Even if you don’t plan to do any fancy DIY projects at home, you can still find some use for a Raspberry Pi. 
+Some notable examples: An ad blocker at router level, Minecraft server, Plex streaming station, self hosted cloud, temperature monitor, smart mirror and much more. More details on some of these projects later below.</p>
+
+<p><em>This article was updated on 3-Jan-2020</em>
+<!--excerpt--></p>
+<h2>Basic setup guide:</h2>
+<h3>Hardware</h3>
+<ol>
+  <li>Buy <strong>a Raspberry Pi</strong>. <a href="https://www.raspberrypi.org/products/">Check here</a> for retailers. Check your local stores like Fry’s, Micro Center, Target and even some Walmart stores have it. There are multiple models of pi.
+    <ul>
+      <li><strong>Raspberry Pi Zero W</strong>: A very tiny pi that costs $10. Best for light use.</li>
+      <li><strong>Raspberry Pi 4 Model B</strong>: A very powerful latest version of pi. Comes in variants 1gb, 2gb and 4gb. Well suited for many home server applications. See below. Costs from $30 to $60 depending on model.</li>
+      <li><strong>Raspberry Pi 3 Model B+</strong>: Previous pi model before they launched pi 4. If you can’t get your hands on a model 4, go with 3B+. It still holds well for many applications. Should cost around $25-30 now.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>A micro SD card</strong>. This will be your main system disc. 16gb works fine but I recommend at least 32gb. The cards have gotten cheap so 32gb should cost like <a href="https://smile.amazon.com/dp/B06XWN9Q99/">$6.49 here</a>.</p>
+  </li>
+  <li>
+    <p><strong>A card reader/laptop with SD card reader</strong>. This is necessary to install operating system on the SD card. You can buy cards with pre-installed OS but what’s the point of tinkering if you don’t do it yourself?</p>
+  </li>
+  <li><strong>A power adapter</strong>. Depending on which Pi you have, you will either need a micro USB or a USB-C power source. Majority of Android phone chargers will do the job in a pinch but I recommend buying a proper power adapter. All the electronics stored mentioned above should have them along with Pi.</li>
+</ol>
+
+<h3>Base Software/OS setup</h3>
+<p>There are multiple linux distros available for Raspberry Pis. Most commonly used OS for a pi is Raspbian. It is developed by Raspberry Pi foundation and has most users. Installing this OS is actually very simple.</p>
+
+<ol>
+  <li>
+    <p>Download the OS image. Raspbian can be downloaded from <a href="https://www.raspberrypi.org/downloads/raspbian/">this page</a>. Choose Rasbian Lite (no GUI, only base OS) if you plan to use the pi for non visual stuff. You never have to connect a monitor to pi unless your project needs a screen. So it’s always a good idea to start with Raspbian lite.</p>
+  </li>
+  <li>
+    <p>Windows users download one of these tools: Win32DiskImager, Rufus. These are used to install the OS image to your SD card.</p>
+  </li>
+  <li>
+    <p>Plug in your micro SD card. Open Win32DiskImager. Select the OS image downloaded in step 1 above, make sure the drive selected by the tool is the SD card. Hit ‘Write’, accept warnings and stuff. Takes around a minute or so to write the SD card.</p>
+  </li>
+  <li><strong>VERY IMPORTANT DON’T SKIP THIS STEP</strong>
+Detailed instructions <a href="https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup/">here</a>. Quick version:
+On your desktop, create following files.
+    <ul>
+      <li>An empty file named ‘ssh’ without any extension. Not even txt.</li>
+      <li>Another file named <code class="highlighter-rouge">wpa_supplicant.conf</code> and paste following in the file (update your wifi network name and password of course):
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+     
+network={
+    ssid="NETWORK-NAME"
+    psk="NETWORK-PASSWORD"
+}
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Now remove the car from your computer, put it in the pi. Connect the pi to the power supply. Give it a minute to boot for first time. Find out what IP got assigned to the PI using your router interface. If all goes well, you will see the pi connected to your wifi. Now you can SSH into the pi. Windows 10 has now built in SSH so you don’t need any external tools. 
+Just open cmd and type <code class="highlighter-rouge">ssh pi@&lt;&lt;ip-address&gt;&gt;</code>. Default username for Raspberry pi is <code class="highlighter-rouge">pi</code> and password is <code class="highlighter-rouge">raspberry</code>. Change the password once you login.</li>
+</ol>
+
+<h2>Some projects</h2>
+<p>Now we have it up and running, here are few projects you can do with your Raspberry pi:</p>
+
+<ul>
+  <li>
+    <p>Run a <a href="https://pi-hole.net/">PiHole</a> ad blocker for your network
+This is first project I did with a Raspberry pi zero. PiHole If you live near a micro center, you can get a PI Zero W (wifi version) for $10 ($5 when on sale).</p>
+  </li>
+  <li>
+    <p>A <a href="https://www.plex.tv/">Plex</a> media server: Attach a USB drive filled with your movies, photos and videos to the pi. <a href="https://www.raspberrypi.org/documentation/configuration/external-storage.md">Make it auto-mount</a>. Install Plex media server and now you can cast your own library of movies to your TV using Plex mobile app. It’s like having your own Netflix. It has features like automatic subtitle downloads, remote access from outside your home etc.</p>
+  </li>
+  <li>
+    <p>Host a website: There are many tutorials online about how to host a website on your pi. Though it is always better to just get a commercial server package than self hosting a website. But you can always just use Pi as your testing server.</p>
+  </li>
+  <li>
+    <p>Smart Mirror: A digital overlay on a mirror that shows you weather, news and your meetings etc. If you check <a href="https://www.reddit.com/r/raspberry_pi/">Raspberry Pi subreddit</a> or <a href="https://www.reddit.com/r/RASPBERRY_PI_PROJECTS/">Pi projects subreddit</a>, you will see someone posting a Smart Mirror build every week.</p>
+  </li>
+  <li>
+    <p>A Minecraft server if you are into that sort of thing.</p>
+  </li>
+  <li>
+    <p>Personal Cloud: You will need to research this a bit. There are many open source and free personal cloud distros available. <a href="https://www.openmediavault.org/">OpenMediaVault</a> works great on Raspberry Pi.</p>
+  </li>
+</ul>
+
+        </div>
+        
+      </li>
+    
+  </ul>
+
+  
+
+
+</div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy; Sudarshan Kadam - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://thesuda.github.io/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
