@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Tech Stuff</title>
+    <link href="https://sudarshankadam.dev/feed.xml" rel="self" />
+    <link href="https://sudarshankadam.dev" />
+    <updated>1969-12-31T19:00:00-05:00</updated>
+    <author>
+        <name>Sudarshan Kadam</name>
+    </author>
+    <id>https://sudarshankadam.dev</id>
+
+    <entry>
+        <title>You should get a Raspberry Pi</title>
+        <author>
+            <name>Sudarshan Kadam</name>
+        </author>
+        <link href="https://sudarshankadam.dev/every-developer-should-have-a-raspberry-pi/"/>
+        <id>https://sudarshankadam.dev/every-developer-should-have-a-raspberry-pi/</id>
+            <category term="raspberry pi"/>
+            <category term="pi zero"/>
+            <category term="homelab"/>
+            <category term="home server"/>
+            <category term="developers"/>
+
+        <updated>2020-07-21T13:16:12-04:00</updated>
+            <summary>
+                <![CDATA[
+                    Raspberry… what?If you don’t know what a Raspberry Pi is, you should check it out. It’s a single board computer barely bigger than a credit card in size. It can run many operating systems like Raspbian, Ubuntu and Windows 10 IoT core. To use this&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="raspberry-what">Raspberry… what?</h2>
+<p>If you don’t know what a <a href="https://www.raspberrypi.org/">Raspberry Pi</a> is, you should check it out. It’s a single board computer barely bigger than a credit card in size. It can run many operating systems like Raspbian, Ubuntu and Windows 10 IoT core. To use this tiny computer, all you need is a micro SD card and a power supply. For most use cases you will never have to connect a keyboard or mouse to the pi. You can just set it up and access remotely from your personal computer. Raspberry Pis are a favorite tool of most DIY enthusiasts. Even if you don’t plan to do any fancy DIY projects at home, you can still find some use for a Raspberry Pi. 
+Some notable examples: An ad blocker at router level, Minecraft server, Plex streaming station, self hosted cloud, temperature monitor, smart mirror and much more. More details on some of these projects later below.</p>
+<!--excerpt-->
+<h2 id="basic-setup-guide">Basic setup guide:</h2>
+<h3 id="hardware">Hardware</h3>
+<ol>
+<li><p>Buy <strong>a Raspberry Pi</strong>. <a href="https://www.raspberrypi.org/products/">Check here</a> for retailers. Check your local stores like Fry’s, Micro Center, Target and even some Walmart stores have it. There are multiple models of pi. </p>
+<ul>
+<li><strong>Raspberry Pi Zero W</strong>: A very tiny pi that costs $10. Best for light use. </li>
+<li><strong>Raspberry Pi 4 Model B</strong>: A very powerful latest version of pi. Comes in variants 1gb, 2gb and 4gb. Well suited for many home server applications. See below. Costs from $30 to $60 depending on model.</li>
+<li><strong>Raspberry Pi 3 Model B+</strong>: Previous pi model before they launched pi 4. If you can’t get your hands on a model 4, go with 3B+. It still holds well for many applications. Should cost around $25-30 now.</li>
+</ul>
+</li>
+<li><p><strong>A micro SD card</strong>. This will be your main system disc. 16gb works fine but I recommend at least 32gb. The cards have gotten cheap so 32gb should cost like <a href="https://smile.amazon.com/dp/B06XWN9Q99/">$6.49 here</a>.</p>
+</li>
+<li><p><strong>A card reader/laptop with SD card reader</strong>. This is necessary to install operating system on the SD card. You can buy cards with pre-installed OS but what’s the point of tinkering if you don’t do it yourself?</p>
+</li>
+<li><p><strong>A power adapter</strong>. Depending on which Pi you have, you will either need a micro USB or a USB-C power source. Majority of Android phone chargers will do the job in a pinch but I recommend buying a proper power adapter. All the electronics stored mentioned above should have them along with Pi.</p>
+</li>
+</ol>
+<h3 id="base-softwareos-setup">Base Software/OS setup</h3>
+<p>There are multiple linux distros available for Raspberry Pis. Most commonly used OS for a pi is Raspbian. It is developed by Raspberry Pi foundation and has most users. Installing this OS is actually very simple. </p>
+<ol>
+<li><p>Download the OS image. Raspbian can be downloaded from <a href="https://www.raspberrypi.org/downloads/raspbian/">this page</a>. Choose Rasbian Lite (no GUI, only base OS) if you plan to use the pi for non visual stuff. You never have to connect a monitor to pi unless your project needs a screen. So it’s always a good idea to start with Raspbian lite.</p>
+</li>
+<li><p>Windows users download one of these tools: Win32DiskImager, Rufus. These are used to install the OS image to your SD card.</p>
+</li>
+<li><p>Plug in your micro SD card. Open Win32DiskImager. Select the OS image downloaded in step 1 above, make sure the drive selected by the tool is the SD card. Hit ‘Write’, accept warnings and stuff. Takes around a minute or so to write the SD card.</p>
+</li>
+<li><p><strong>VERY IMPORTANT DON’T SKIP THIS STEP</strong>
+Detailed instructions <a href="https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup/">here</a>. Quick version:
+On your desktop, create following files.</p>
+<ul>
+<li>An empty file named ‘ssh’ without any extension. Not even txt. </li>
+<li>Another file named <code>wpa_supplicant.conf</code> and paste following in the file (update your wifi network name and password of course):</li>
+</ul>
+</li>
+</ol>
+<pre><code>country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+    ssid=&quot;NETWORK-NAME&quot;
+    psk=&quot;NETWORK-PASSWORD&quot;
+}</code></pre><ol start="5">
+<li>Now remove the card from your computer, put it in the pi. Connect the pi to the power supply. Give it a minute to boot for first time. Find out what IP got assigned to the PI using your router interface. If all goes well, you will see the pi connected to your wifi. Now you can SSH into the pi. Windows 10 has now built in SSH so you don’t need any external tools. 
+Just open cmd and type <code>ssh pi@&lt;&lt;ip-address&gt;&gt;</code>. Default username for Raspberry pi is <code>pi</code> and password is <code>raspberry</code>. Change the password once you login. </li>
+</ol>
+<h2 id="some-projects">Some projects</h2>
+<p>Now we have it up and running, here are few projects you can do with your Raspberry pi:</p>
+<ul>
+<li><p>Run a <a href="https://pi-hole.net/">PiHole</a> ad blocker for your network
+This is first project I did with a Raspberry pi zero. PiHole If you live near a micro center, you can get a PI Zero W (wifi version) for $10 ($5 when on sale).  </p>
+</li>
+<li><p>A <a href="https://www.plex.tv/">Plex</a> media server: Attach a USB drive filled with your movies, photos and videos to the pi. <a href="https://www.raspberrypi.org/documentation/configuration/external-storage.md">Make it auto-mount</a>. Install Plex media server and now you can cast your own library of movies to your TV using Plex mobile app. It’s like having your own Netflix. It has features like automatic subtitle downloads, remote access from outside your home etc. </p>
+</li>
+<li><p>Host a website: There are many tutorials online about how to host a website on your pi. Though it is always better to just get a commercial server package than self hosting a website. But you can always just use Pi as your testing server.</p>
+</li>
+<li><p>Smart Mirror: A digital overlay on a mirror that shows you weather, news and your meetings etc. If you check <a href="https://www.reddit.com/r/raspberry_pi/">Raspberry Pi subreddit</a> or <a href="https://www.reddit.com/r/RASPBERRY_PI_PROJECTS/">Pi projects subreddit</a>, you will see someone posting a Smart Mirror build every week.</p>
+</li>
+<li><p>A Minecraft server if you are into that sort of thing.</p>
+</li>
+<li><p>Personal Cloud: You will need to research this a bit. There are many open source and free personal cloud distros available. <a href="https://www.openmediavault.org/">OpenMediaVault</a> works great on Raspberry Pi.</p>
+</li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+</feed>
